@@ -84,7 +84,7 @@ AC_DEFUN([ACX_INFINIBAND],[
    	   fi
 	fi
 	for iblib in libibverbs.so libibverbs.a; do
-		for iblib_path in lib lib64; do
+		for iblib_path in lib lib64 lib/x86_64-linux-gnu; do
 	      	    ac_lib_infiniband=$ac_path_infiniband/$iblib_path
 		    AC_CHECK_FILE($ac_lib_infiniband/$iblib,[HAVE_INF_LIB=1],[HAVE_INF_LIB=0])
 		    if test ${HAVE_INF_LIB} = 1; then

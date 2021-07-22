@@ -7,7 +7,7 @@ AC_DEFUN([ACX_MPI],[
 	      inc_path=include
 	      ac_inc_mpi=$with_mpi/$inc_path
 	      AC_CHECK_FILE($ac_inc_mpi/mpi.h,[HAVE_MPI_HEADER=1],[HAVE_MPI_HEADER=0])
-	      for lib_path in lib lib64; do
+	      for lib_path in lib lib64 lib/x86_64-linux-gnu; do
 	      	  for mpi_lib in libmpi.a libmpi.so libmpich.a libmpich.so; do
 	      	      ac_lib_mpi=$with_mpi/$lib_path
 	      	      AC_CHECK_FILE($ac_lib_mpi/$mpi_lib,[HAVE_MPI_LIB=1],[HAVE_MPI_LIB=0])
